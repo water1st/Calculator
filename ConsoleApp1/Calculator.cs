@@ -51,6 +51,10 @@ namespace ConsoleApp1
                 //算数运算符'+' '-' '*' '/'
                 else if (IsOperatorWithOutParenthesis(inputStr[i]))
                 {
+                    if (inputStr[i].Equals(MINUS_SIGN) && i == 0)
+                    {
+                        numberStack.Push(0);
+                    }
                     if (operatorStack.Count.Equals(0) || operatorStack.Peek().Equals('('))
                     {
                         operatorStack.Push(inputStr[i]);
